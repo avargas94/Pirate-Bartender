@@ -1,4 +1,4 @@
-
+import random
 
 questions = {
     "strong": "Do ye like yer drinks strong?",
@@ -16,4 +16,28 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-This is a test
+
+def askQuestions():
+    qresults = {}
+    for c, q in questions.items():
+        print("{} Please enter Yes or No".format(q))
+        val = input().capitalize()
+        if val == "Yes": qresults.update({c: True})
+        else: qresults.update({c: False})
+    return qresults
+
+
+def constructDrink(x):
+    r = {}
+    for f, y in x.items():
+        if f in ingredients and y == True:
+            ing = ingredients[f]
+            r.update({f: random.choice(ing)})
+    return r              
+
+if __name__ == '__main__':
+    choices = askQuestions()
+    d = constructDrink(choices)
+    
+    
+    print(d)
