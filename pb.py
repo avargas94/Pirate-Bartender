@@ -36,7 +36,6 @@ def constructDrink(x):
     
     print("With what your taste buds are feeling right now. Your drink will have the following ingredients!")
     for d, n in r.items(): print(n)
-    return n
 
 if __name__ == '__main__':
     askQuestions()
