@@ -34,7 +34,7 @@ def constructDrink(x):
             ing = ingredients[f]
             r.update({f: random.choice(ing)})
     
-    print("With the what your taste buds are feeling right now. This is what I have selected for you!")
+    print("With what your taste buds are feeling right now. Your drink will have the following ingredients!")
     for d, n in r.items(): print(n)
     return n
 
