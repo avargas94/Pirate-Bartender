@@ -16,9 +16,9 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
+qresults = {}
 
 def askQuestions():
-    qresults = {}
     for c, q in questions.items():
         print("{} Please enter Yes or No".format(q))
         val = input().capitalize()
@@ -33,13 +33,12 @@ def constructDrink(x):
         if f in ingredients and y == True:
             ing = ingredients[f]
             r.update({f: random.choice(ing)})
-    return r              
+    
+    print("With the what your taste buds are feeling right now. Your drink will have the following ingredients!")
+    for d, n in r.items(): print(n)
+    return n
 
 if __name__ == '__main__':
-    choices = askQuestions()
-    d = constructDrink(choices)
+    askQuestions()
+    constructDrink(qresults)
     
-    
-    print(d)
-    
-    #update
